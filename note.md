@@ -32,14 +32,22 @@ GitHub Pages 設定手順
 	2. GitHub Pages を設定完了するとリモートのルートに CNAME ファイルが自動で追加されているので $ git pull でマージしてから push
 	3. リポジトリには _config.yml が追加されるのみだが、実サイトには自動生成された sitemap.xml が追加されている
 		- 確認方法: https://{ユーザー名}.github.io/{リポジトリ名}/sitemap.xml
-		- カスタムドメインの場合: https://{取得ドメイン}/sitemap.xml
+		- カスタムドメインの場合は: https://{取得ドメイン}/sitemap.xml
 	4. sitemap.xml をGoogle検索にヒットさせるため送信する
 		- Google Search Console > サイトマップ: https://{ユーザー名}.github.io/{リポジトリ名}/sitemap.xml を設定する
-		- カスタムドメインの場合: https://{取得ドメイン}/sitemap.xml
+		- カスタムドメインの場合は: https://{取得ドメイン}/sitemap.xml
 
 - 更新してから反映まで1-2時間程かかるので注意
-- favicon.ico (32x32のみ): 全てのhtmlに <link rel="icon" href="favicon.ico" type="image/x-icon"> タグを設定する
-
+- favicon.ico (32x32のみ): 全てのhtmlに <link rel="icon" href="favicon.ico" type="image/x-icon"> タグを設定
+- 5日程経過すると Google から以下のメールが来たので /robots.txt を書いて設置
+	```
+	ページ がインデックスに登録されない新しい要因
+	Search Console で、貴サイトのいくつかの ページ がインデックスに登録されていないことが検出されました。以下がその要因となっています。
+	robots.txt によりブロックされました
+	```
+	- Search Consoleで再クロール依頼が必要
+	- TODO: プライバシーポリシー等はHITさせる必要は無いので robots.txt に "Disallow: /許可しないディレクトリ/" 等と指定する予定
+		- 2025/6 現状 ルート直下が個別アプリディレクトリの階層構成なので /policies/アプリ名 等という構成にしたいが、アプリ内のリンクが固定なので次回アプデで変更する
 
 
 -----------------------------------------------------------------------------

@@ -38,7 +38,8 @@ GitHub Pages 設定手順
 		- カスタムドメインの場合: https://{取得ドメイン}/sitemap.xml
 
 - 更新してから反映まで1-2時間程かかるので注意
-- favicon.ico: 32x32 のみ
+- favicon.ico (32x32のみ): 全てのhtmlに <link rel="icon" href="favicon.ico" type="image/x-icon"> タグを設定する
+
 
 
 -----------------------------------------------------------------------------
